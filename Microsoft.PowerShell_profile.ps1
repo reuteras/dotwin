@@ -32,6 +32,11 @@ if (-not(Get-Module -ListAvailable posh-git)) {
     Import-Module posh-git
 }
 
+# For easier usage of Docker
+if (-not(Get-Module -ListAvailable DockerCompletion)) {
+    Import-Module DockerCompletion
+}
+
 # Use git to diff to files
 function Diff-TwoFiles ($file1, $file2) {
     git diff $file1 $file2
