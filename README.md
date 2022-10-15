@@ -1,4 +1,4 @@
-# dotwin
+ dotwin
 
 My configuration files for Windows. I use the same Vim configuration for bot Linux, Mac and Windows so it is not included here. 
 
@@ -47,3 +47,22 @@ To work with 1Password for Windows it should look something like this.
         process = git-lfs filter-process
         required = true
 ```
+
+## Fixes for wsl
+
+I like to have 1password available in wsl. I found this [blog][blo] and the needed steps are listed below. In wsl do the following:
+
+    sudo apt install socat
+    export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
+    socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &
+
+Before testing we need to build **npiperelay.exe** in Windows. First [download][dow] install **go**. You will have to start a new terminal to load the updated path. Then install [npiperelay][npi].
+
+    go install github.com/jstarks/npiperelay@latest
+
+After this you can use 1Password from wsl.
+
+  [blo]: https://stuartleeks.com/posts/wsl-ssh-key-forward-to-windows/
+  [dow]: https://go.dev/dl/
+  [npi]: https://github.com/jstarks/npiperelay
+
