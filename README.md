@@ -10,18 +10,23 @@ Clone this repository to your local machine.
 
 ## Powershell profile
 
-First change directory to your *Documents* directory in your home.
+There are two different locations for the directory depending on if you use PowerShell 5.1 or 7. 
+
+For 5.1 change directory to your *Documents* folder in your home directory.
 
     cd C:\Users\<username>\Documents
 
-Then create a directory for Powershell.
+Then create a directory for PowerShell.
 
-    mkdir WindowsPowerShell 
+    mkdir WindowsPowerShell          # PowerShell 5.1
+    mkdir PowerShell                 # PowerShell 7
 
-Enter **cmd** and create a link.
+Enter **cmd** and create a link in each directory.
 
     cmd
-    mklink Microsoft.PowerShell_profile.ps1 <full path to dotwin>/Microsoft.PowerShell_profile.ps
+    cd <dir>
+    mklink Microsoft.PowerShell_profile.ps1 <full path to dotwin>/Microsoft.PowerShell_profile.ps  # PS 5.1
+    mklink profile.ps1 <full path to dotwin>/Microsoft.PowerShell_profile.ps                       # PS 7
 
 ## .gitconfig
 
