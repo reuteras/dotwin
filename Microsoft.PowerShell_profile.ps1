@@ -43,6 +43,11 @@ function Diff-TwoFiles ($file1, $file2) {
 }
 Set-Alias gdiff Diff-Twofiles
 
+# Function to start a Jupyter notebook
+function notebook () {
+	docker run --name notebook --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB=no -v C:\Users\reuteras\Documents\Jupyter\work\:/home/jovyan/work -v C:\Users\reuteras\Documents\Jupyter\.jupyter:/home/jovyan/.jupyter reuteras/container-notebook
+}
+
 # Make Windows be more like Linux :)
 Set-Alias less more
 Set-Alias apt winget
