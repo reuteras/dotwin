@@ -1,6 +1,6 @@
  dotwin
 
-My configuration files for Windows. I use the same Vim configuration for bot Linux, Mac and Windows so it is not included here. 
+My configuration files for Windows. I use the same Vim configuration for both Linux, Mac and Windows so it is not included here. 
 
 ## Start
 
