@@ -51,3 +51,6 @@ function notebook () {
 # Make Windows be more like Linux :)
 Set-Alias less more
 Set-Alias apt winget
+
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
+Invoke-Expression -Command $(oh-my-posh completion powershell | Out-String)
